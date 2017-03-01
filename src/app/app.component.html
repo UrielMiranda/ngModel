@@ -1,3 +1,39 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav-container fullscreen>
+  <md-sidenav #sidenav mode="side">
+    <md-toolbar>
+      <span>
+        <button md-button
+        routerLink="/home">
+          Home
+        </button>
+      </span>
+      <md-toolbar-row>
+        <button md-button
+        routerLink="/people">
+          People</button>
+      </md-toolbar-row>
+      <md-toolbar-row>
+        <button md-button
+                routerLink="/planets">
+          Planets</button>
+      </md-toolbar-row>
+      <md-toolbar-row>
+        <button md-button
+                routerLink="/starships">
+          Starships</button>
+      </md-toolbar-row>
+    </md-toolbar>
+  </md-sidenav>
+  <md-toolbar color="primary">
+    <button md-icon-button
+    (click)="sidenav.toggle()">
+      <md-icon>menu</md-icon>
+    </button>
+    <button md-button
+            routerLink="/home">Home</button>
+  </md-toolbar>
+  <div class="body-margin">
+    <router-outlet></router-outlet>
+  </div>
+
+</md-sidenav-container>
